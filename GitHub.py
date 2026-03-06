@@ -2,7 +2,7 @@ git add ficheros--------------> Añade ficheros al commit (punto de guardado)
 
 git commit -m "descripción"  -------------> Crea el punto de guardado
 
-git push origen destino  ---------------------> Envía el commit local al repositorio remoto 
+git push origin main ---------------------> Envía el commit local al repositorio remoto tambien se puede poner origen y destino.
 
 git pull  -------------------------> Trae el commit remoto al repo local 
 
