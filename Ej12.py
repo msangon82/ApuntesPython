@@ -16,7 +16,6 @@ class Kart:
 
     def acelerar (self):
         try:
-            global aceleratekart
             aceleratekart = (self.v0 + self.aceleration)
             if aceleratekart > self.max_vel:
                 aceleratekart = self.max_vel
