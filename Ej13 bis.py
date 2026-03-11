@@ -6,11 +6,10 @@
 # - Buscar un contacto por nombre
 # - Eliminar un contacto 
 # - Mostar todos los contactos (quien quiera sufrir, qu elos devuelva ordenados alfabéticamente).
+import json 
 
-agenda = {
-    "1":{"Nombre":"miguel","Telefono":"666999333","Direccion":"Rúa Montón, 2 - Ferrol"}, 
-    "2":{"Nombre": "fina", "Telefono":"555333111", "Direccion":"Residencia Galatea - Ferrol"}
-    }
+with open("Ej13_bis_Jason.json", "r") as archivo:
+        agenda = json.load(archivo)
 
 while True:
     print(f"Está usted en el programa AGENDA. Seleccione una opción: ")
