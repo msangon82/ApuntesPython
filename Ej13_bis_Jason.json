@@ -1,4 +1,12 @@
 {
-    "1":{"Nombre":"miguel","Telefono":"666999333","Direccion":"Rúa Montón, 2 - Ferrol"}, 
-    "2":{"Nombre": "fina", "Telefono":"555333111", "Direccion":"Residencia Galatea - Ferrol"}
+    "1": {
+        "Nombre": "miguel",
+        "Telefono": "666999333",
+        "Direccion": "R\u00c3\u00baa Mont\u00c3\u00b3n, 2 - Ferrol"
+    },
+    "2": {
+        "Nombre": "fina",
+        "Telefono": "555333111",
+        "Direccion": "Residencia Galatea - Ferrol"
+    }
 }
