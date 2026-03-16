@@ -8,12 +8,13 @@
 # - Mostar todos los contactos (quien quiera sufrir, qu elos devuelva ordenados alfabéticamente).
 import json
 
-MiAgenda="Ej13_bis_Jason.json"
+MiAgenda="./resources/Ej13_bis_Jason.json"
 
 def cargar_agenda():
     with open(MiAgenda, "r") as agenda:
         archivo = json.load(agenda)
     return archivo
+    global archivo
 
 def guardar_agenda(archivo):
     with open(MiAgenda, "w") as agenda:
@@ -31,7 +32,7 @@ while True:
     print(f"4. Eliminar un contacto")
     print(f"5. Modificar un conctacto")
     print(f"6. Salir del programa")
-    opcion = int(input(""))
+    opcion = int(input())
 
     if opcion == 1:
         print(f"Introduzca los datos de la persona que desea añadir: ")
@@ -49,10 +50,10 @@ while True:
 
     elif opcion == 2: 
         contacto_buscar = input(f"Introduzca el nombre del contacto a buscar: ").lower()
-        if contacto_buscar in MiAgenda:
-            print(f"\nNombre:{contacto_buscar}")
-            print(f"\nTelefono: {MiAgenda[key][contacto_buscar]["Telefono"]}")
-            print(f"\nDireccion: {MiAgenda[key][contacto_buscar]["Direccion"]}")
+        if contacto_buscar in archivo:
+            print(f"\nNombre:{agenda.values, [contacto_buscar]["Nombre"]}")
+            print(f"\nTelefono: {agenda.values, [contacto_buscar]["Telefono"]}")
+            print(f"\nDireccion: {agenda.values, [contacto_buscar]["Direccion"]}")
 
         else:
             print("Contacto no encontrado")
@@ -69,7 +70,7 @@ while True:
     elif opcion == 4: 
         nombre = input("Introduzca el contacto a eliminar: ").lower()
         try: 
-            del MiAgenda[key]["Nombre"]
+            del MiAgenda["Nombre"]
             print("Contacto eliminado")
         except: 
             print("El contacto no existe")
