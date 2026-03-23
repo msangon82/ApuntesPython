@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+  configsvr:
+    image: mongo:latest
+    container_name: configsvr
+    command: mongod --configsvr --replSet configReplSet --bind_ip_all --port 27017
+    ports:
+      - "27100:27017"
+    volumes:
+      - config_data:/data/db
+    networks:
+      - mongo_shard_net
+
+  shard1:
+    image: mongo:latest
+    container_name: shard1
+    command: mongod --shardsvr --replSet shard1ReplSet --bind_ip_all --port 27017
+    ports:
+      - "27101:27017"
+    volumes:
+      - shard1_data:/data/db
+    networks:
+      - mongo_shard_net
+
+  shard2:
+    image: mongo:latest
+    container_name: shard2
+    command: mongod --shardsvr --replSet shard2ReplSet --bind_ip_all --port 27017
+    ports:
+      - "27102:27017"
+    volumes:
+      - shard2_data:/data/db
+    networks:
+      - mongo_shard_net
+
+  mongos:
+    image: mongo:latest
+    container_name: mongos
+    depends_on:
+      - configsvr
+      - shard1
+      - shard2
+    command: mongos --configdb configReplSet/configsvr:27017 --bind_ip_all --port 27017
+    ports:
+      - "27020:27017"
+    networks:
+      - mongo_shard_net
+
+volumes:
+  config_data:
+  shard1_data:
+  shard2_data:
+
+networks:
+  mongo_shard_net:
