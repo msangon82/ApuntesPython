@@ -2,9 +2,9 @@
 # Incluye un constructor que inicialice los dos números como atributos.
 
 class Calculadora:
-    def __init__(self):
-        self.numero1 = int(input("Introduce el primer número: "))
-        self.numero2 = int(input("Introduce el segundo número: "))
+    def __init__(self, num1, num2):
+        self.numero1 = num1
+        self.numero2 = num2
 
     def suma(self):
         return self.numero1 + self.numero2
