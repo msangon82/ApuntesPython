@@ -10,7 +10,7 @@ class CalculadoraGUI:
         self.root.title ("Calculadora del Taco")
         self.root.geometry("640x480")
         self.root.resizable (False, False)
-        image_path="calc.jpg"
+        image_path="./resources/calc.jpg"
         img = Image.open(image_path)
 
         # Etiquetas y entradas

@@ -3,13 +3,18 @@
 
 def contador():
     texto = str(input("Introduce el texto a contabilizar:      "))
-    palabras = len(texto)
-    return palabras
+    palabras = texto.split()
+    return len(palabras)
 
 class Texto:
-    def __init__ (self):
-        self.texto = str(input("Introduce el texto a contabilizar: "))
+    def __init__ (self, miTexto):
+        self.texto = miTexto
 
-    def contardor(self):
-        palabras = len(self.texto)
-        return palabras
+    def contador(self):
+        return contador(self.texto)
+
+
+print (contador())
+
+
+
