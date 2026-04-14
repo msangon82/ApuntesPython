@@ -4,14 +4,19 @@
 class ConversorTemperatura:
 
     def __init__(self, base):
-        self_temperatura = base 
-        base = int(input("f/ Introduce la temperatura base: "))
-        return self_temperatura
-
-    def celcius(self, self_temperatura):
-        convertir_C = (self_temperatura / 33,8)
-        return convertir_C
+        self.temperatura = base 
     
-    def Fahrenheit(self, self_temperatura):
-        convertir_F = (self_temperatura * 33.8)
+    def celsius (self):
+        convertir_C = (self.temperatura * 9/5) + 32
+        return convertir_C
+      
+    
+    def fahrenheit(self):
+        convertir_F = (self.temperatura - 32) * 5/9
         return convertir_F
+       
+# Ejemplo de uso
+convierte_c = ConversorTemperatura(20)   # 20°C
+print("Celsius a Fahrenheit:", ConversorTemperatura.celsius())
+convierte_f = ConversorTemperatura(68)   # 68°F
+print("Fahrenheit a Celsius:", ConversorTemperatura.fahrenheit())
