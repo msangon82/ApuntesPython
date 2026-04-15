@@ -14,11 +14,10 @@ while True:
     try:
         peso = float(input("Introduce tu peso en kg: "))
         altura = float(input("Introduce tu altura en metros: "))
+        print(f"Tu IMC es: {Calcular_IMC(peso, altura)}")
         break
     except ValueError:
         print("Por favor, introduce un número válido.")
 
-tipo, valor = Calcular_IMC(80, 1.80)    
-print (f"Su IMC es {tipo} con un valor de {valor}") 
 
 
