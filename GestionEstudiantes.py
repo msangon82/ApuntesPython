@@ -11,6 +11,7 @@ class Estudiante:
         self.__nombre = name
         return self.__nombre
     
+    
     def resultado (self):
         if self.__calificacion >= 5:
             print ("Aprobado")
